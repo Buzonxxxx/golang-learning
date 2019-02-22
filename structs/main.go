@@ -22,28 +22,14 @@ func main() {
 			zipCode: 94800, 
 		},
 	}
+
+	// jimPointer := &jim
 	jim.updateName("Jimmy")
 	jim.print()
-	// fmt.Printf("%+v", jim)
-	// type1
-	// alex := person{ firstName: "Alex", lastName: "Anderson"}
-	// fmt.Println(alex)
-
-	// type 2
-	// var alexander person
-	// fmt.Println(alexander)
-	// fmt.Printf("%+v\n", alexander)
-	
-	// type 3
-	// var ally person
-	// ally.firstName = "Ally"
-	// ally.lastName = "Anderson"
-	// fmt.Println(ally)
-	// fmt.Printf("%+v\n", ally)
 }
 
-func (p person) updateName(newFirstName string) {
-	p.firstName = newFirstName
+func (pointerToPerson *person) updateName(newFirstName string) {
+	(*pointerToPerson).firstName = newFirstName
 }
 func (p person) print() {
 	fmt.Printf("%+v", p)
