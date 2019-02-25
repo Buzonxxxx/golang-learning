@@ -1,6 +1,8 @@
 package main
 import "fmt"
- 
+
+// slice: call by reference
+
 func main(){
    mySlice := []string {"Hi", "There", "How", "Are", "You"}
    updateSlice(mySlice)

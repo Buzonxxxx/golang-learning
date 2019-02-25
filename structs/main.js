@@ -5,9 +5,8 @@ let person = {
 
 console.log(person)
 
-const updateFirstName = (firstname) => {
-  person.firstName = firstname
-}
+const updateFirstName = firstname => person.firstName = firstname
+
 
 updateFirstName("Jimmy")
 console.log(person)
