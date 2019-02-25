@@ -10,13 +10,16 @@ import (
 	"time"
 )
 
+type lottery []int
+
 func main() {
 	lotteryNumbers := generateNumbers(49)
-	pickNumbers := pickNumbers(6, lotteryNumbers)
-	print(pickNumbers)
+	pickedNumbers := pickNumbers(6, lotteryNumbers)
+	lotteryNumbers.print()
+	pickedNumbers.print()
 }
 
-func generateNumbers(endNum int) []int {
+func generateNumbers(endNum int) lottery {
 	numbers := []int{}
 	for i := 1; i <= endNum; i++ {
 		numbers = append(numbers, i)
@@ -24,18 +27,18 @@ func generateNumbers(endNum int) []int {
 	return numbers
 }
 
-func pickNumbers(count int, numbers []int) []int {
+func pickNumbers(count int, numbers []int) lottery {
 	source := rand.NewSource(time.Now().UnixNano())
 	r := rand.New(source)
 
-	pickNumbers := []int{}
+	pickNumbers := lottery{}
 	for i := 1; i <= count; i++ {
 		num := r.Intn(len(numbers))
 		pickNumbers = append(pickNumbers, num)
 	}
-	return (pickNumbers)
+	return pickNumbers
 }
 
-func print(numbers []int) {
-	fmt.Println(numbers)
+func (l lottery) print() {
+		fmt.Println(l)
 }
