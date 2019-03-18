@@ -39,6 +39,10 @@ func newDeckFromFile(filename string) deck{
 	return deck(s)
 }
 
+func (d deck) saveToFile(filename string) error {
+	return ioutil.WriteFile(filename, []byte(d.toString()), 0666)
+}
+
 func (d deck) print() {
 	for i, card := range d {
 		fmt.Println(i+1, card)
@@ -47,10 +51,6 @@ func (d deck) print() {
 
 func (d deck) toString() string {
 	return strings.Join([]string(d), ",") //deck => []string => string => []byte
-}
-
-func (d deck) saveToFile(filename string) error {
-	return ioutil.WriteFile(filename, []byte(d.toString()), 0666)
 }
 
 func (d deck) shuffle() {
