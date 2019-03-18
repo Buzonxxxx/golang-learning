@@ -1,3 +1,4 @@
+// call by reference
 let person = {
 		firstName: "Jim",
 		lastName: "Party",

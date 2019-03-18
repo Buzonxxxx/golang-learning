@@ -21,10 +21,6 @@ func printMap(c map[string]string) {
 }
 
 
-
-
-
-
 	// type1
 	// var colors map[string]string
 
