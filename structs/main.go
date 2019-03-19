@@ -22,15 +22,18 @@ func main() {
 			zipCode: 94800,
 		},
 	}
+	// &: give me the memory address of the value(jim)
+	// jimPointer := &jim 
+	// jimPointer.updateName("Jimmy")
 
-	// jimPointer := &jim
 	jim.updateName("Jimmy")
 	jim.print()
 }
 
-func (pointerToPerson *person) updateName(newFirstName string) {
-	(*pointerToPerson).firstName = newFirstName
+
+func (p *person) updateName(newFirstName string) { 
+	(*p).firstName = newFirstName // *: give me the value of this memory address
 }
-func (pointerToPerson person) print() {
-	fmt.Printf("%+v", pointerToPerson)
+func (p person) print() {
+	fmt.Printf("%+v", p)
 }

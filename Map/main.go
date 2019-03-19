@@ -9,6 +9,11 @@ func main() {
 		"green": "#4bf745",
 		"white": "#ffffff",
 	}
+	// add
+	colors["GG"] = "XDDD"
+
+	// delete 
+	delete(colors, "white")
 
 	fmt.Println(colors)
 	printMap(colors)
@@ -20,7 +25,7 @@ func printMap(c map[string]string) {
 	}
 }
 
-
+	// Declare 
 	// type1
 	// var colors map[string]string
 
@@ -32,9 +37,3 @@ func printMap(c map[string]string) {
 	// 	"red":   "#ff0000",
 	// 	"green": "#4bf745",
 	// }
-
-	// add
-	// colors["white"] = "#ffffff"
-
-	//delete
-	// delete(colors, "white")
